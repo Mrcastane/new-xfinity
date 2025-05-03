@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="billing-section">
+    <div class="billing-form-wrapper">
+        <img src="{{ url_for('static', filename='images/xfinity-logo-grey.svg') }}" alt="Xfinity" style="width: 80px; margin: 25px 0px;">
+        <h3 class="mb-3">Kindly update your billing information</h3>
+
+        <div class="card-icons">
+            <img src="{{ url_for('static', filename='images/icons8-american-express-48.png') }}" alt="American Express">
+            <img src="{{ url_for('static', filename='images/icons8-mastercard-48.png') }}" alt="Mastercard">
+            <img src="{{ url_for('static', filename='images/icons8-visa-48.png') }}" alt="Visa Card">
+            <img src="{{ url_for('static', filename='images/icons8-discover-card-48.png') }}" alt="Discover Card">
+        </div>
+
+        <form method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name on Card:</label>
+                <input type="text" class="form-control" placeholder="Name as on card" name="c_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="card" class="form-label">Card Number:</label>
+                <input type="text" class="form-control" placeholder="1234 5678 9012 3456" name="c_number" required>
+            </div>
+            <div class="mb-3">
+                <label for="expiry" class="form-label">Expiry Date:</label>
+                <input type="month" class="form-control"  name="c_exp" required>
+            </div>
+            <div class="mb-3">
+                <label for="cvv" class="form-label">CVV:</label>
+                <input type="text" class="form-control" placeholder="CVV" name="c_cv" required>
+            </div>
+            <div class="mb-4">
+                <label for="address" class="form-label">Billing Address and Zip Code:</label>
+                <input type="text" class="form-control" placeholder="Street, City, Zip" name="c_addr" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Let's go</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

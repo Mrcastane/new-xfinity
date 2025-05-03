@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xfinity Billing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            padding: 50px;
+        }
+        .payment-icons img {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .purple-btn {
+            background-color: #6f42c1;
+            color: white;
+        }
+        .right-section {
+            background: linear-gradient(135deg, #f4f2fe, #dcd3fd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+        }
+        .right-section h2 {
+            color: #5f2db6;
+            font-weight: bold;
+        }
+        .right-section button {
+            background-color: #343a40;
+            color: white;
+        }
+        .x-logo {
+            color: #5f2db6;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row min-vh-100">
+        <!-- Left section: Form -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-white">
+            <div class="form-container w-100" style="max-width: 450px;">
+                <div class="mb-4">
+                    <div class="x-logo mb-2">xfinity</div>
+                    <h4>Kindly update your billing information</h4>
+                </div>
+                <div class="payment-icons mb-3">
+                    <img src="https://img.icons8.com/color/48/amex.png"/>
+                    <img src="https://img.icons8.com/color/48/mastercard.png"/>
+                    <img src="https://img.icons8.com/color/48/visa.png"/>
+                    <img src="https://img.icons8.com/color/48/discover.png"/>
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name on Card:</label>
+                        <input type="text" class="form-control" placeholder="Name as on card">
+                    </div>
+                    <div class="mb-3">
+                        <label for="card" class="form-label">Card Number:</label>
+                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="mb-3">
+                        <label for="expiry" class="form-label">Expiry Date:</label>
+                        <input type="month" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cvv" class="form-label">CVV:</label>
+                        <input type="text" class="form-control" placeholder="CVV">
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="form-label">Billing Address and Zip Code:</label>
+                        <input type="text" class="form-control" placeholder="Street, City, Zip">
+                    </div>
+                    <a href="{{ url_for('billing') }}" type="submit" class="btn purple-btn w-100">Let's go</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right section: Image and Promo -->
+        <div class="col-md-6 right-section">
+            <h2>Let's cut your mobile bill in half</h2>
+            <p class="mb-4">
+                Xfinity Internet customers can save big over T‑Mobile, Verizon, and AT&T in their first year when you get two Unlimited lines with the 5G Xfinity Mobile network.
+            </p>
+            <button class="btn">Calculate your savings</button>
+            <img src="https://i.ibb.co/3dLmFZz/phone-mockup.png" class="img-fluid mt-4" alt="Phone">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

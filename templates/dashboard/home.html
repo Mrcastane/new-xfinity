@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-section">
+    <div class="login-form-wrapper">
+        <!-- Image with Flask URL generation -->
+        <img src="{{ url_for('static', filename='images/xfinity-logo-grey.svg') }}" alt="Xfinity" style="width: 80px; margin: 25px 0px;">
+        <h3 class="mb-3">Sign in with your Xfinity ID</h3>
+
+        <!-- Form submission handled by Flask route -->
+        <form method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Email, mobile, or username" name="username" required >
+            </div>
+            <div class="mb-3">
+                <input type="Password" class="form-control" placeholder="Password" name="password"required>
+            </div>
+            <p class="text-muted" style="font-size: 13px;">
+                By signing in, you agree to our
+                <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+            <button type="submit" class="btn btn-primary">Let's go</button>
+        </form>
+        <!-- Additional login-related links -->
+        <div class="login-links mt-4">
+            <a href="#">
+                <span>New to Xfinity? View exclusive offers near you <i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="#">
+                <span>Find your Xfinity ID <i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="#">
+                <span>Create a new Xfinity ID <i class="fas fa-chevron-right"></i></span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
